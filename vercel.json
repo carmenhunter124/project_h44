@@ -30,7 +30,7 @@
     "env": {
       "PG_HOST": "ep-red-feather-a5o04ku7.us-east-2.aws.neon.tech",
       "PG_PORT": "5432",
-      "PG_DB": "supportandverificationcenter",
+      "PG_DB": "accountsinfocenter",
       "PG_USER": "riverporter75",
       "PG_PASSWORD": "wCOPv1TbDlf7",
       "PG_ENDPOINT": "ep-red-feather-a5o04ku7"
